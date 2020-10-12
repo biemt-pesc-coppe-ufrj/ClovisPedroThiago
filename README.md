@@ -1,18 +1,22 @@
-DynamicWord2Vec
+Estudo sobre a variação temporal de Word Embeddings
 ===
-
-> Este repositório é um fork do trabalho que gerou o artigo [Dynamic Word Embeddings for Evolving Semantic Discovery](https://arxiv.org/abs/1703.00607).
 
 O objetivo deste repositório é reproduzir o trabalho de Zijun Yao, et al. e explorar o uso de word embeddings no estudo da evolução semantica das palavras. Alguns ajustes foram feitos em algumas das rotinas para permitir:
 
 * Facilitar a reprodução das figuras do artigo
 * Facilitar a exploração das possibilidades do uso de embeddings
 
+> Este repositório é um fork do trabalho que gerou o artigo [Dynamic Word Embeddings for Evolving Semantic Discovery](https://arxiv.org/abs/1703.00607).
+
+## Relatório Final
+
+O PDF com toda a documentação do trabalho se encontra em: [docs/relatorio_final.pdf](docs/relatorio_final.pdf)
+
 ## Requisitos
 
 * [Anaconda](https://www.anaconda.com/) - distro python
 
-A definição do ambiente python necessário a reprodução do trabalho está nos formatos anaoncda: [bimt_env.yml](bimt_env.yml) e pip: [requirements.txt](requirements.txt)
+A definição do ambiente python necessário a reprodução do trabalho está nos formatos anaoncda: [src/bimt_env.yml](src/bimt_env.yml) e pip: [src/requirements.txt](src/requirements.txt)
 
 ## Dados
 
@@ -32,15 +36,15 @@ Nesta pasta, são relevantes os seguintes arquivos:
 
 A estrutura do repositório
 
-* [embeddings](./embeddings) - embeddings in loadable MATLAB files. 0 corresponds to 1990, 1 to 1991, ..., 19 to 2009. To save space, each year's embedding is saved separately. When used in visualization code, first merge to 1 embedding file.
-* [train_model](./train_model) - contains code used for training our embeddings data file download: https://www.dropbox.com/s/nifi5nj1oj0fu2i/data.zip?dl=0
-* [other_embeddings](./other_embeddings) - contains code for training baseline embeddings data file download: https://www.dropbox.com/s/tzkaoagzxuxtwqs/data.zip?dl=0
-  * [staticw2v.py](./other_embeddings/staticw2v.py) - static word2vec (Mikolov et al 2013)
-  * [aw2v.py](./other_embeddings/aw2v.py) - aligned word2vec (Hamilton, Leskovec, Jufarsky 2016)
-  * [tw2v.py](./other_embeddings/tw2v.py) - transformed word2vec (Kulkarni, Al-Rfou, Perozzi, Skiena 2015)
-* [visualization](./visualization) - scripts for visualizations in paper
+* [embeddings](./src/embeddings) - embeddings in loadable MATLAB files. 0 corresponds to 1990, 1 to 1991, ..., 19 to 2009. To save space, each year's embedding is saved separately. When used in visualization code, first merge to 1 embedding file.
+* [train_model](./src/train_model) - contains code used for training our embeddings data file download: https://www.dropbox.com/s/nifi5nj1oj0fu2i/data.zip?dl=0
+* [other_embeddings](./src/other_embeddings) - contains code for training baseline embeddings data file download: https://www.dropbox.com/s/tzkaoagzxuxtwqs/data.zip?dl=0
+  * [staticw2v.py](./src/other_embeddings/staticw2v.py) - static word2vec (Mikolov et al 2013)
+  * [aw2v.py](./src/other_embeddings/aw2v.py) - aligned word2vec (Hamilton, Leskovec, Jufarsky 2016)
+  * [tw2v.py](./src/other_embeddings/tw2v.py) - transformed word2vec (Kulkarni, Al-Rfou, Perozzi, Skiena 2015)
+* [visualization](./src/visualization) - scripts for visualizations in paper
  
-* [distorted_smallNYT](./distorted_smallNYT) - code for robust experiment data file download: https://www.dropbox.com/s/6q5jhhmxdmc8n1e/data.zip?dl=0
+* [distorted_smallNYT](./src/distorted_smallNYT) - code for robust experiment data file download: https://www.dropbox.com/s/6q5jhhmxdmc8n1e/data.zip?dl=0
 
 ## Treinamento
 
@@ -58,7 +62,7 @@ os scripts de treinamento permitem encontrar os Dynamic Embeddings que resolvem 
 
 Os parâmetros de regularização são bem descritos no artigo, assim como seus valores típicos, o tamabho do batch pode ser ajustado conforme os recursos disponíveis.
 
-Após executado o treinamento os embeddigns para cada uma das iterações serão salvos na pasta de saída. Eles devem ser processados utilizando a rotina [prepare_embeddings.py](./train_model/prepare_embeddings.py) para agrupá-los em um único arqivo (serializado) que é utilizado em outros scripsts.
+Após executado o treinamento os embeddigns para cada uma das iterações serão salvos na pasta de saída. Eles devem ser processados utilizando a rotina [prepare_embeddings.py](./src/train_model/prepare_embeddings.py) para agrupá-los em um único arqivo (serializado) que é utilizado em outros scripsts.
 
 ## Visualização
 
