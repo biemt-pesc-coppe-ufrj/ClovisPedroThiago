@@ -1,12 +1,16 @@
-Estudo sobre Da variação temporal de Word Embeddings
+Estudo sobre a variação temporal de Word Embeddings
 ===
-
-> Este repositório é um fork do trabalho que gerou o artigo [Dynamic Word Embeddings for Evolving Semantic Discovery](https://arxiv.org/abs/1703.00607).
 
 O objetivo deste repositório é reproduzir o trabalho de Zijun Yao, et al. e explorar o uso de word embeddings no estudo da evolução semantica das palavras. Alguns ajustes foram feitos em algumas das rotinas para permitir:
 
 * Facilitar a reprodução das figuras do artigo
 * Facilitar a exploração das possibilidades do uso de embeddings
+
+> Este repositório é um fork do trabalho que gerou o artigo [Dynamic Word Embeddings for Evolving Semantic Discovery](https://arxiv.org/abs/1703.00607).
+
+## Relatório Final
+
+O PDF com toda a documentação do trabalho se encontra em: [docs/relatorio_final.pdf](docs/relatorio_final.pdf)
 
 ## Requisitos
 
